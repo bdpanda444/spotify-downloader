@@ -98,9 +98,9 @@ def entry_point():
     # Check if we are not blocked by ytm
     if "youtube-music" in downloader_settings["audio_providers"]:
         if not check_ytmusic_connection():
-            raise DownloaderError(
-                "You are blocked by YouTube Music. "
-                "Please use a VPN, change youtube-music to piped, or use other audio providers"
+            logger.info(
+                "You might be blocked by YouTube Music. "
+                "If downloads fail, use a VPN, or use other audio providers. "
             )
 
     # Initialize spotify client
